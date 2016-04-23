@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>  <meta charset="utf-8">
+  <style>
+      * { padding: 0; margin: 0; }
+      canvas { background: #eee; display: block; margin: 0 auto; }
+      #button:hover{
+        background-color:"blue"
+      }
+    </style>
+
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+
+    
+
+
+
+
+function doSquareRoot(){
+var inputNum1=document.form1.input1.value;
+var result = Math.sqrt(inputNum1);
+document.form1.answer.value = result;
+}
+function doMultiplication(){
+	var input1Multiplication=document.form2.Multiplicationinput2.value;
+	var input2Multiplication=document.form2.Multiplicationinput3.value;
+	var multiplyanswer= input2Multiplication*input1Multiplication;
+  $("#answer").remove();
+  $("#multiplication").append("<p id='answer'>"+multiplyanswer+"</p>")
+}
+
+function doDivision(){
+  var yourdividend1=document.form3.YourDividend1.value;
+  var yourdivisor1=document.form3.YourDivisor1.value;
+  var division= yourdividend1/yourdivisor1;
+  alert(division);
+}
+
+function doTrig() {
+    var inputTrig1=document.form5.input5.value;
+    var tanAnswer= Math.tan((inputTrig1 * Math.PI)/180);
+    var sinAnswer= Math.sin((inputTrig1 * Math.PI)/180);
+    var cosAnswer= Math.cos((inputTrig1 * Math.PI)/180);
+    document.form5.tan.value = tanAnswer;
+    document.form5.sin.value = sinAnswer;
+    document.form5.cos.value = cosAnswer;
+}
+
+
+
+function toDegrees (angle) {
+  return angle * (180 / Math.PI);
+}
+
+
+$("#button").hover(function(){
+    $(this).css("color", "yellow");
+    }, function(){
+    $(this).css("color", "pink");
+});
+
+
+
+</script>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">CalculatorApp</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Refresh!</a></li>
+      <li><a href="GameOfSampleWebPage.html">Game!</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="jumbotron">
+  <h1>Square Root</h1>
+<form name=form1>
+Enter Number:
+<input type="text" name="input1" size=10>
+<input type="button" value="Calculate" onClick='doSquareRoot()'>
+<br>
+The square root is:
+<input type="text" name="answer" size=20>
+</form>
+</div>
+</div>
+
+
+<div class="container">
+<div class="jumbotron">
+<FORM NAME="Calc">
+<TABLE BORDER=4>
+<TR>
+<TD>
+<INPUT TYPE="text"   NAME="Input" Size="16">
+<INPUT TYPE="button" NAME="clear" VALUE="  c  " OnClick="Calc.Input.value = ''">
+<br>
+</TD>
+</TR>
+<TR>
+<TD>
+<INPUT id="button" TYPE="button" NAME="one"   VALUE="  1  " OnClick="Calc.Input.value += '1'">
+<INPUT id="button" TYPE="button" NAME="two"   VALUE="  2  " OnCLick="Calc.Input.value += '2'">
+<INPUT id="button" TYPE="button" NAME="three" VALUE="  3  " OnClick="Calc.Input.value += '3'">
+<INPUT id="button" TYPE="button" NAME="plus"  VALUE="  +  " OnClick="Calc.Input.value += ' + '">
+<br>
+<INPUT id="button" TYPE="button" NAME="four"  VALUE="  4  " OnClick="Calc.Input.value += '4'">
+<INPUT id="button" TYPE="button" NAME="five"  VALUE="  5  " OnCLick="Calc.Input.value += '5'">
+<INPUT id="button" TYPE="button" NAME="six"   VALUE="  6  " OnClick="Calc.Input.value += '6'">
+<INPUT id="button" TYPE="button" NAME="minus" VALUE="  -  " OnClick="Calc.Input.value += ' - '">
+<br>
+<INPUT id="button" TYPE="button" NAME="seven" VALUE="  7  " OnClick="Calc.Input.value += '7'">
+<INPUT id="button" TYPE="button" NAME="eight" VALUE="  8  " OnCLick="Calc.Input.value += '8'">
+<INPUT id="button" TYPE="button" NAME="nine"  VALUE="  9  " OnClick="Calc.Input.value += '9'">
+<INPUT id="button" TYPE="button" NAME="times" VALUE="  x  " OnClick="Calc.Input.value += ' * '">
+<br>
+<INPUT id="button" TYPE="button" NAME="zero"  VALUE="  0  " OnClick="Calc.Input.value += '0'">
+<INPUT id="button" TYPE="button" NAME="DoIt"  VALUE="  =  " OnClick="Calc.Input.value = eval(Calc.Input.value)">
+<INPUT id="button" TYPE="button" NAME="div"   VALUE="  /  " OnClick="Calc.Input.value += ' / '">
+<INPUT id="button" TYPE="button" NAME="nine"  VALUE="." OnClick="Calc.Input.value += '.'">
+<br>
+</TD>
+</TR>
+</TABLE>
+</FORM>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="jumbotron">
+  <h1>Sin, Cos, and Tan in degrees!</h1>
+<form name=form5>
+Enter Number:
+<input type="text" name="input5" size=10>
+<input type="button" value="Sin, Cos, and Tan" onClick='doTrig()'>
+<br>
+The sin is:
+<input type="text" name="sin" size=20>
+The cos is:
+<input type="text" name="cos" size=20>
+The tan is:
+<input type="text" name="tan" size=20>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
